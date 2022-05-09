@@ -43,14 +43,14 @@ window.onload = () => {
     out += `<div class="keyK hidden ru keyUp">${String.fromCharCode(keyRuUp1[i])}</div>`;
   }
 
-  out += '<div class="Enter keyK act"> Enter </div>';
-  out += '<div class=" Shift ShiftLeft keyK act"> Shift </div>';
+  out += '<div class="Enter keyK act">Enter</div>';
+  out += '<div class=" Shift ShiftLeft keyK act">Shift </div>';
 
   for (let i = 0; i < keyEngLow2.length; i += 1) {
     out += `<div class="keyK act en keyDown">${String.fromCharCode(keyEngLow2[i])}</div>`;
     out += `<div class="keyK en hidden keyUp">${String.fromCharCode(keyEngUp2[i])}</div>`;
     out += `<div class="keyK hidden ru keyDown">${String.fromCharCode(keyRuLow2[i])}</div>`;
-    out += `<div class="keyK hidden ru keyUp">${String.fromCharCode(keyRuUp2[i])}</div>`;
+    out += `<div class="keyK hidden ru keyUp"><p>${String.fromCharCode(keyRuUp2[i])}</div>`;
   }
   out += '<div class="keyK act ArrowUp"> ▲ </div>';
   out += '<div class="ShiftRight keyK act "> Shift </div>';
@@ -261,34 +261,27 @@ window.onload = () => {
       case 'CapsLock':
         isCapslock();
         break;
-
       case '':
         isSpace();
         break;
-
       case 'Tab':
         isTab();
         break;
-
       case 'Backspace':
         isBackSpace();
         break;
-
       case 'Delete':
         isDel();
         break;
-
       case 'Shift':
         if (flag) {
           flag = false;
           isShift();
         }
         break;
-
       case 'Enter':
         isEnter();
         break;
-
       case 'Control':
         checkCtrl = true;
         break;
@@ -301,7 +294,6 @@ window.onload = () => {
       case 'ArrowLeft':
         changeArrow('ArrowLeft');
         break;
-
       case 'ArrowRight':
         changeArrow('ArrowRight');
         break;
