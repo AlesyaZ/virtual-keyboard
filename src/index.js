@@ -249,6 +249,85 @@ window.onload = () => {
   const isSpace = () => input('');
   const isEnter = () => input('\n');
 
+  document.addEventListener('keydown', (event) => {
+    event.preventDefault();
+    document.querySelector(`.${event.code}.act`).classList.add('active');
+    if (event.key.length === 1 && event.keyK !== ' ') {
+      const letter = document.querySelector(`.${event.code}.act`).textContent;
+      input(letter);
+    }
+
+    switch (event.key) {
+      case 'CapsLock':
+        isCapslock();
+        break;
+
+      case '':
+        isSpace();
+        break;
+
+      case 'Tab':
+        isTab();
+        break;
+
+      case 'Backspace':
+        isBackSpace();
+        break;
+
+      case 'Delete':
+        isDel();
+        break;
+
+      case 'Shift':
+        if (flag) {
+          flag = false;
+          isShift();
+        }
+        break;
+
+      case 'Enter':
+        isEnter();
+        break;
+
+      case 'Control':
+        checkCtrl = true;
+        break;
+      case 'ArrowUp':
+        input('▲');
+        break;
+      case 'ArrowDown':
+        input('▼');
+        break;
+      case 'ArrowLeft':
+        changeArrow('ArrowLeft');
+        break;
+
+      case 'ArrowRight':
+        changeArrow('ArrowRight');
+        break;
+      default:
+    }
+
+    document.onkeyup = () => {
+      if (event.key === 'Shift') {
+        flag = true;
+        isShift();
+        keykey.forEach((element) => {
+          element.classList.remove('active');
+        });
+      } else if (event.key === 'Alt' && checkCtrl) {
+        changeLang();
+        checkCtrl = false;
+      }
+
+      keykey.forEach((element) => {
+        if (!element.classList.contains('ShiftLeft')) {
+          element.classList.remove('active');
+        }
+      });
+    };
+  });
+
 
 
   textArea.focus();
