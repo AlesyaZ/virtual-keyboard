@@ -70,8 +70,8 @@ textarea {
 .Tab,
 .BackSpace {
     width: auto;
-    background-color: #696969;
-    border: 1px solid #696969;
+    background: linear-gradient(180deg, #212621d0, #202020);
+    box-shadow: -8px 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .Space.active,
@@ -94,6 +94,7 @@ textarea {
     background:#18300ab6;
     box-shadow: -3px -3px 5px rgba(74, 243, 27, 0.347),
     3px 3px 3px rgba(9, 34, 5, 0.455);
+    border: 1px solid rgb(23, 48, 24);
 }
 
 .AltLeft,
@@ -104,15 +105,15 @@ textarea {
 .ArrowUp,
 .ArrowDown,
 .Del {
-    background-color:#696969;
-    border: 1px solid #696969;
+    background: linear-gradient(180deg, #212621d0, #202020);
+    box-shadow: -8px 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .CtrlRight,
 .CtrlLeft{
     width: 40px;
-    background-color: #696969;
-    border: 1px solid #696969;
+    background: linear-gradient(180deg, #212621d0, #202020);
+    box-shadow: -8px 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .keyK.Space{
@@ -138,15 +139,17 @@ textarea {
     width: 50px;
 }
 
-.active {
+.keyK.active {
     background:#18300ab6;
     box-shadow: -3px -3px 5px rgba(74, 243, 27, 0.347),
-    10px 0 10px rgba(246, 246, 246, 0.8); 
+    3px 3px 3px rgba(9, 34, 5, 0.455);
+    border: 1px solid rgb(36, 77, 38);
 }
 
 .actives {
     background:#2b2c2bb6;
     box-shadow: 10px 0 10px rgba(246, 246, 246, 0.8); 
+    border: 1px solid rgb(36, 77, 38);
 }
 
 .hidden {
