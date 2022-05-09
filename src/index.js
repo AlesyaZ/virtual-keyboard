@@ -328,7 +328,66 @@ window.onload = () => {
     };
   });
 
+  keykey.forEach((e) => {
+    e.addEventListener('click', (event) => {
+      if (event.target.className.includes('CapsLock')) {
+        isCapslock();
+      } else if (event.target.className.includes('Backspace')) {
+        isBackSpace();
+      } else if (event.target.className.includes('Enter')) {
+        input('\n');
+      } else if (event.target.className.includes('Tab')) {
+        isTab();
+      } else if (event.target.className.includes('Delete')) {
+        isDel();
+      } else if (event.target.className.includes('ArrowLeft')) {
+        changeArrow('ArrowLeft');
+      } else if (event.target.className.includes('ArrowRight')) {
+        changeArrow('ArrowRight');
+      } else if (event.target.className.includes('ArrowUp')) {
+        input('▲');
+      } else if (event.target.className.includes('ArrowDown')) {
+        input('▼');
+      } else if (event.target.className.includes('keyK')
+    && !event.target.className.includes('Ctrl')
+    && !event.target.className.includes('Alt')
+    && !event.target.className.includes('Win')
+    && !event.target.className.includes('Shift')) {
+        const letter = event.target.textContent;
+        input(letter);
+      }
+    });
+  });
 
+  keyboard.addEventListener('mousedown', (event) => {
+    if (event.target.className.includes('keyK') && !event.target.className.includes('Shift')) {
+      event.target.classList.add('active');
+    } else if (event.target.className.includes('Shift')) {
+      event.target.classList.add('active');
+      isShift();
+    }
+  });
+
+  keyboard.addEventListener('mouseup', (event) => {
+    if (event.target.className.includes('keyK') && !event.target.className.includes('Shift')) {
+      event.target.classList.remove('active');
+    } else if (event.target.className.includes('Shift')) {
+      event.target.classList.remove('active');
+      isShift();
+    }
+  });
+
+  keyboard.addEventListener('mouseover', (event) => {
+    if (event.target.className.includes('keyK')) {
+      event.target.classList.add('actives');
+    }
+  });
+  keyboard.addEventListener('mouseout', (event) => {
+    if (event.target.className.includes('keyK')) {
+      event.target.classList.remove('actives');
+      event.target.classList.remove('active');
+    }
+  });
 
   textArea.focus();
   textArea.addEventListener('blur', () => textArea.focus());
